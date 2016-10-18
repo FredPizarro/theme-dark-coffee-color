@@ -1,9 +1,9 @@
 {
     "name": "theme-dark-coffee-color",
-    "title": "Theme Dark Coffee Color",
+    "title": "Coffee Color",
     "description": "Inspirate in the product coffee !!..",
     "homepage": "https://github.com/FredPizarro/theme-dark-coffee-color",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "author": "Fred Pizarro <freddy_ps_3@hotmail.com> (https://github.com/FredPizarro/)",
     "license": "MIT",
     "engines": {

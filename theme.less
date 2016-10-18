@@ -1,0 +1,229 @@
+// COLOR PALETTE
+@background: #1D1F21;
+@foreground: #08605F;
+/* BLUES */
+
+@darkblue1: #172030;
+@darkblue2: #131821;
+/* GREENS */
+
+/* Hellow */
+@amarillo: #f0f0bc;
+@amarillo1: #efefad;
+
+
+@lightgreen2: #114B5F;
+/* GREYS */
+
+@grey1: #28343D;
+@grey2: #777788;
+@grey3: #b5b5b5;
+/* ACCENTS */
+
+
+@rojo: #BF1B41;
+
+@negro: #47484B;
+@plomo: #D7D8D9;
+@plomo_oscuro: #aaa6a5;
+@plomo_oscuro2:#3d3d3d;
+
+@verde: #0DAB76;
+
+@orange: #fc6b40;
+@anaranjado: #cb6a4d;
+
+/*
+
+********************************************
+********************************************
+
+*/
+
+// STYLING
+.CodeMirror,.CodeMirror-scroll {
+    background-color: @background;
+    color: @plomo;
+}
+
+.CodeMirror-focused .CodeMirror-activeline-background {
+    background: @darkblue2;
+}
+
+.show-line-padding .CodeMirror-focused .CodeMirror-activeline-background {
+    box-shadow: inset 15px 0 0 0 #000;
+}
+
+.CodeMirror-focused .CodeMirror-activeline {
+    .CodeMirror-gutter-elt {
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+    }
+    .inline-widget .CodeMirror-gutter-elt {
+        color: @grey1;
+    }
+}
+ 
+/************************************ atributos  *************************************/
+.cm-atom,
+.cm-string,
+.cm-string-2,
+.cm-hr {
+    color: @anaranjado;
+}
+/*_____________________________________________________________________________*/
+.cm-attribute,
+.cm-plus {
+    color: @orange;
+}
+
+.cm-number {
+    color: @plomo_oscuro;
+}
+
+.cm-def,
+.cm-property {
+    color: @orange;
+}
+
+.cm-variable,
+.cm-operator,
+.cm-meta,
+.cm-bracket {
+    color: @grey2;
+}
+
+.cm-variable-2 { color: @grey3;}
+.cm-variable-3 { color: @plomo_oscuro;}
+
+// VARIABLE COLORS FOR PHP
+.cm-m-clike.cm-variable { color: @grey3;}
+.cm-m-clike.cm-variable-2 { color: @orange;}
+.cm-m-clike.cm-operator { color: @grey2;}
+.cm-comment { color: @grey1;}
+.cm-error,
+.cm-minus { color: @plomo_oscuro;
+}
+.cm-header { color: #d85896;}
+.cm-link { color: #b77fdb;
+    text-decoration: none;
+}
+.cm-rangeinfo { color: #6c71c4;}
+.cm-keyword,
+.cm-qualifier,
+.cm-builtin,
+.cm-tag,
+.cm-quote { color: @verde;
+}
+
+// EXTRA CSS 
+.CodeMirror-searching {
+    background-color: @lightgreen2;
+    &.searching-current-match {
+        background-color: @verde;
+    }
+}
+.CodeMirror-cursor {
+    border-left: 1px solid #fff !important;
+}
+.CodeMirror-gutters {
+    background-color: @background;
+    border-right: none;
+}
+
+/***** numeración de cada linea ******/
+.CodeMirror-linenumber { color: @plomo_oscuro2;}
+/*_____________________________________________________________________*/
+
+.CodeMirror .CodeMirror-selected {
+    background: #333f48;
+}
+
+/***** seleccion de texto ******/
+
+.CodeMirror-focused .CodeMirror-selected {
+    background: @negro;
+    border-bottom-left-radius: 3px;
+}
+/*______________________________________________________________________*/
+
+
+/*****  seleccion de corchetes ******/
+.CodeMirror-matchingbracket,
+.CodeMirror-matchingtag {
+    background-color: transparent;
+    border-bottom: 2px solid @rojo;
+    color: @verde;
+}
+/*______________________________________________________________________*/
+
+.CodeMirror-matchingbracket {
+    color: @verde!important;
+}
+
+.CodeMirror-overwrite .CodeMirror-cursor {
+    border-left: none !important;
+    border-bottom: 1px solid #fff;
+}
+
+.CodeMirror {
+    .CodeMirror {
+        background: transparent;
+    }
+    .CodeMirror .CodeMirror-gutters {
+        background: transparent;
+        border-right: none;
+    }
+    .CodeMirror .CodeMirror-activeline-background {
+        background: transparent;
+    }
+    .CodeMirror .CodeMirror-activeline .CodeMirror-gutter-elt {
+        background: transparent;
+        color: @grey1;
+    }
+    .CodeMirror-focused .CodeMirror-activeline-background {
+        background: @darkblue2;
+    }
+    .CodeMirror-focused .CodeMirror-activeline {
+        .CodeMirror-gutter-elt {
+            background: rgba(0, 0, 0, 0.2);
+            color: @grey3;
+        }
+    }
+}
+
+.CodeMirror-foldgutter-open:after {
+    color: @grey1;
+}
+
+.CodeMirror-foldgutter-folded:after {
+    color: @orange;
+}
+
+.CodeMirror.over-gutter,
+.CodeMirror-activeline {
+    .CodeMirror-foldgutter-open:after {
+        color: @grey1;
+    }
+}
+
+.CodeMirror-foldmarker {
+    border-color: @foreground;
+    color: @grey2;
+    background-color: @background;
+    padding: 0 5px;
+}
+
+// NON-EDITOR STYLING
+.image-view,
+.not-editor { 
+    background-color: @background;
+}
+
+.view-pane .image-view {
+    color: @grey2;
+}
+
+.quick-view-highlight {
+    background: @darkblue1;
+}

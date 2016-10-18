@@ -25,12 +25,10 @@ As this location is under your user directory, the content is persisted across C
 
 #### view in html
 ![HTML](screenshots/theme-coffee-01.png)
-#### view in json
+#### view in CSS
 ![HTML](screenshots/theme-coffee-02.png)
 #### view in javascript
 ![HTML](screenshots/theme-coffee-03.png)
-#### Preview
-![HTML](screenshots/preview.png)
 
 
 =======

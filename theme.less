@@ -1,37 +1,37 @@
 // COLOR PALETTE
-@background: #1D1F21;
-@foreground: #08605F;
+@background: #211513;
+@foreground: #bdbdbd;
 /* BLUES */
 
-@darkblue1: #172030;
-@darkblue2: #131821;
-/* GREENS */
+/* light*/           /*Dark*/
+@c_piel_yellow_0: #f1fa8c; @c_piel_yellow_1: #E6DB74; @c_piel_yellow_2: #cddc39;@c_piel_yellow_3: #cddc39; @c_piel_yellow_4: #ffff00;
+@c_pulpa_0: #ffcc80; @c_pulpa_1: #ffe082;
+@c_hojas_0: #50fa7b; @c_hojas_1: #1de9b6; @c_hojas_2: #00c853; @c_hojas_3: #10AB76;
+@c_nubes_0: #80d8ff; @c_nubes_1: #42a5f5; @c_nubes_2: #00b0ff;
+@c_nada_0: #EEEEEE;  @c_nada_1: #d7ccc8;
+@c_piel_orange_0: #ff7043;
 
-/* Hellow */
-@amarillo: #f0f0bc;
-@amarillo1: #efefad;
+/* Color Material */
+@blueGrey-900: #263238;
+@indigo-900: #1a237e;
+@lightGreen-900: #33691e;
+@grey-100: #f5f5f5;
+@grey-200: #eeeeee;
+@grey-400: #bdbdbd;
+@grey-500: #9e9e9e;
+@grey-700:#616161;
+@grey-800: #424242;
+@red-500: #f44336;
 
-
-@lightgreen2: #114B5F;
-/* GREYS */
-
-@grey1: #28343D;
-@grey2: #777788;
-@grey3: #b5b5b5;
 /* ACCENTS */
+@yellow-A200: #FFFF8D;
+@red-A400: #ff1744;
+@blue-A400: #2979ff;
+@lightGreen-A400: #76ff03;
 
-
-@rojo: #BF1B41;
-
-@negro: #47484B;
-@plomo: #D7D8D9;
-@plomo_oscuro: #aaa6a5;
-@plomo_oscuro2:#3d3d3d;
-
-@verde: #0DAB76;
-
-@orange: #fc6b40;
-@anaranjado: #cb6a4d;
+@green-500: #4caf50;
+@deepOrange-400: #ff7043;
+@deepOrange-300: #ff8a65;
 
 /*
 
@@ -41,13 +41,26 @@
 */
 
 // STYLING
-.CodeMirror,.CodeMirror-scroll {
+
+/* Editor area */
+.CodeMirror, .CodeMirror-scroll {
     background-color: @background;
-    color: @plomo;
+    color: @grey-400;
 }
 
+#editor-holder .CodeMirror,
+#editor-holder .CodeMirror-scroll {
+    background-color: @background;
+    color: @foreground;
+}
+
+.cm-m-css.cm-tag {
+    color: @deepOrange-400;
+}
+
+/* highlight for the active line (View > Highlight Active Line) */
 .CodeMirror-focused .CodeMirror-activeline-background {
-    background: @darkblue2;
+    background: @red-A400;
 }
 
 .show-line-padding .CodeMirror-focused .CodeMirror-activeline-background {
@@ -56,11 +69,10 @@
 
 .CodeMirror-focused .CodeMirror-activeline {
     .CodeMirror-gutter-elt {
-        background: rgba(0, 0, 0, 0.2);
-        color: #fff;
+        background: rgba(0, 0, 0, 0.2); color: #fff;
     }
     .inline-widget .CodeMirror-gutter-elt {
-        color: @grey1;
+        color: @grey-800;
     }
 }
  
@@ -69,58 +81,61 @@
 .cm-string,
 .cm-string-2,
 .cm-hr {
-    color: @anaranjado;
+    color: @deepOrange-300;
 }
 /*_____________________________________________________________________________*/
 .cm-attribute,
 .cm-plus {
-    color: @orange;
+    color: @deepOrange-400;
 }
 
 .cm-number {
-    color: @plomo_oscuro;
+    color: @grey-200;
 }
 
 .cm-def,
 .cm-property {
-    color: @orange;
+    color: @deepOrange-400;
 }
 
 .cm-variable,
 .cm-operator,
 .cm-meta,
 .cm-bracket {
-    color: @grey2;
+    color: @grey-500;
 }
 
-.cm-variable-2 { color: @grey3;}
-.cm-variable-3 { color: @plomo_oscuro;}
+.cm-variable-2 { color: @grey-400;}
+.cm-variable-3 { color: @grey-200;}
 
 // VARIABLE COLORS FOR PHP
-.cm-m-clike.cm-variable { color: @grey3;}
-.cm-m-clike.cm-variable-2 { color: @orange;}
-.cm-m-clike.cm-operator { color: @grey2;}
-.cm-comment { color: @grey1;}
+.cm-m-clike.cm-variable { color: @grey-400;}
+.cm-m-clike.cm-variable-2 { color: @deepOrange-400;}
+.cm-m-clike.cm-operator { color: @grey-500;}
+.cm-comment { color: @grey-800;}
 .cm-error,
-.cm-minus { color: @plomo_oscuro;
+.cm-minus { color: @grey-200;
 }
 .cm-header { color: #d85896;}
 .cm-link { color: #b77fdb;
     text-decoration: none;
 }
 .cm-rangeinfo { color: #6c71c4;}
+
 .cm-keyword,
 .cm-qualifier,
 .cm-builtin,
 .cm-tag,
-.cm-quote { color: @verde;
+.cm-quote { color: @green-500;
 }
+
+
 
 // EXTRA CSS 
 .CodeMirror-searching {
-    background-color: @lightgreen2;
+    background-color: @lightGreen-900;
     &.searching-current-match {
-        background-color: @verde;
+        background-color: @green-500;
     }
 }
 .CodeMirror-cursor {
@@ -132,17 +147,17 @@
 }
 
 /***** numeración de cada linea ******/
-.CodeMirror-linenumber { color: @plomo_oscuro2;}
+.CodeMirror-linenumber { color: @grey-700;}
 /*_____________________________________________________________________*/
 
 .CodeMirror .CodeMirror-selected {
-    background: #333f48;
+    background: @deepOrange-400;
 }
 
 /***** seleccion de texto ******/
 
 .CodeMirror-focused .CodeMirror-selected {
-    background: @negro;
+    background: @grey-800;
     border-bottom-left-radius: 3px;
 }
 /*______________________________________________________________________*/
@@ -152,13 +167,13 @@
 .CodeMirror-matchingbracket,
 .CodeMirror-matchingtag {
     background-color: transparent;
-    border-bottom: 2px solid @rojo;
-    color: @verde;
+    border-bottom: 2px solid @lightGreen-A400;
+    color: @green-500;
 }
 /*______________________________________________________________________*/
 
 .CodeMirror-matchingbracket {
-    color: @verde!important;
+    color: @green-500!important;
 }
 
 .CodeMirror-overwrite .CodeMirror-cursor {
@@ -179,37 +194,37 @@
     }
     .CodeMirror .CodeMirror-activeline .CodeMirror-gutter-elt {
         background: transparent;
-        color: @grey1;
+        color: @grey-800;
     }
     .CodeMirror-focused .CodeMirror-activeline-background {
-        background: @darkblue2;
+        background: @indigo-900;
     }
     .CodeMirror-focused .CodeMirror-activeline {
         .CodeMirror-gutter-elt {
             background: rgba(0, 0, 0, 0.2);
-            color: @grey3;
+            color: @grey-400;
         }
     }
 }
 
 .CodeMirror-foldgutter-open:after {
-    color: @grey1;
+    color: @grey-800;
 }
 
 .CodeMirror-foldgutter-folded:after {
-    color: @orange;
+    color: @deepOrange-400;
 }
 
 .CodeMirror.over-gutter,
 .CodeMirror-activeline {
     .CodeMirror-foldgutter-open:after {
-        color: @grey1;
+        color: @grey-800;
     }
 }
 
 .CodeMirror-foldmarker {
     border-color: @foreground;
-    color: @grey2;
+    color: @grey-500;
     background-color: @background;
     padding: 0 5px;
 }
@@ -221,9 +236,9 @@
 }
 
 .view-pane .image-view {
-    color: @grey2;
+    color: @grey-500;
 }
 
 .quick-view-highlight {
-    background: @darkblue1;
+    background: @blueGrey-900;
 }

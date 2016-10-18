@@ -10,7 +10,7 @@
         "brackets": ">=0.24.0"
     },
     "theme": {
-        "file": "theme.less",
+        "file": "themes/theme.less",
         "dark": true,
         "addModeClass": true
     },

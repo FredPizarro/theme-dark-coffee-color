@@ -22,10 +22,11 @@
   color: #bdbdbd;
 }
 .cm-m-css.cm-tag {
-  color: #42a5f5;
+  color: #ff7043;
 }
+/* highlight for the active line (View > Highlight Active Line) */
 .CodeMirror-focused .CodeMirror-activeline-background {
-  background: #1a237e;
+  background: #ff1744;
 }
 .show-line-padding .CodeMirror-focused .CodeMirror-activeline-background {
   box-shadow: inset 15px 0 0 0 #000;

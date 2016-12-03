@@ -1,0 +1,5 @@
+// cm-string : id, classes
+
+cm-comment : comments
+
+ace  

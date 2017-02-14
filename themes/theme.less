@@ -1,24 +1,15 @@
 // COLOR PALETTE
-@background: #212121;
+@background: #000000;
 @foreground: #bdbdbd;
-/* BLUES */
+
+
+@white: #ffffff;
+@black: #000000;
 
 
 /* Color Material */
+@blue-800: #1565C0;
 @blueGrey-900: #263238;
-@lightGreen-900: #33691e;
-@grey-200: #EEEEEE;
-@grey-300: #e0e0e0;
-@grey-400: #bdbdbd;
-@grey-500: #9e9e9e;
-@grey-600: #757575;
-@grey-700:#616161;
-@grey-800: #424242;
-@grey-900: #212121;
-@red-50:#ffebee;
-@red-100:#ffcdd2;
-@red-500: #f44336;
-@red-900: #b71c1c;
 @deepOrange-50: #fbe9e7;
 @deepOrange-200: #ffab91;
 @deepOrange-300: #ff8a65;
@@ -27,38 +18,57 @@
 @deepOrange-600: #f4511e;
 @deepOrange-700: #e64a19;
 @deepOrange-800: #d84315;
+@deepPurple-400: #7e57c2;
+@green-100: #C8E6C9;
+@green-300: #81C784;
+@green-500: #4caf50;
+@green-700: #388E3C;
+@green-900: #1b5e20;
+@grey-200: #EEEEEE;
+@grey-300: #e0e0e0;
+@grey-400: #bdbdbd;
+@grey-500: #9e9e9e;
+@grey-600: #757575;
+@grey-700:#616161;
+@grey-800: #424242;
+@grey-900: #212121;
 @indigo-200: #9fa8da;
 @indigo-400: #5c6bc0;
 @indigo-500: #3f51b5;
 @indigo-600: #3949ab;
 @indigo-700: #303f9f;
 @indigo-900: #1a237e;
+@lightGreen-900: #33691e;
+@purple-300: #ba68c8;
+@red-50:#ffebee;
+@red-100:#ffcdd2;
+@red-500: #f44336;
+@red-900: #b71c1c;
 @teal-50: #e0f2f1;
 @teal-500: #009688;
 @teal-600: #00897b;
-    
+@yellow-200: #FFF59D;
+@yellow-300: #FFF176;
+@yellow-500: #ffeb3b;
+
 /* ACCENTS */
-@red-A200: #ff5252;
-@red-A400: #ff1744;
 @blue-A400: #2979ff;
-@lightGreen-A400: #76ff03;
-@yellow-A200: #FFFF8D;
-@yellow-A700: #ffd600;
+@deepOrange-A400: #FF3D00;
+@green-A200: #69F0AE;
+@green-A700: #00C853;
 @indigo-A200: #536dfe;
 @indigo-A700: #304ffe;
+@lightGreen-A400: #76ff03;
+@red-A200: #ff5252;
+@red-A400: #ff1744;
 @teal-A200: #64ffda;
 @teal-A700: #00bfa5;
+@yellow-A100: #FFFF8D;
+@yellow-A200: #FFFF00;
+@yellow-A700: #ffd600;
 
-@green-500: #4caf50;
-@green-900: #1b5e20;
-@yellow-500: #ffeb3b;
-@purple-300: #ba68c8;
-@deepPurple-400: #7e57c2;
-@white: #ffffff;
-@black: #000000;
-
-@txt-shadown: 0 0 1px rgba(0, 0, 0, 0.5);
-@txt-shadown-c: 0 0 0.1px rgba(0, 0, 0, 0.5);
+@txt-shadown: 0 0 1px rgba(255, 255, 255, 0.5);
+@txt-shadown-c: 0 0 0.1px rgba(255, 255, 255, 0.5);
 
 /*
 * C:\Program Files (x86)\Brackets\www\thirdparty\CodeMirror  
@@ -119,11 +129,10 @@
 // STYLING
 /* Editor area **/
 .CodeMirror, .CodeMirror-scroll {
-    font-size: 16px; /* Corregir el default */
+    font-size: 14px; /* Corregir el default */
     background-color:  @background;
     color: @grey-300; text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
 }
-
 
 /* PADDING */
 /* Vertical padding around (content) */
@@ -131,7 +140,7 @@
   padding: 12px 0;
 }
 .CodeMirror pre {
-    color: @grey-300; /* {, : , punto y coma */
+    color: @grey-200; /* {, : , punto y coma */
 }
 .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
   background-color: @grey-300; /* The little square between H and V scrollbars */  
@@ -141,8 +150,6 @@
 }
 
 
-
-
 #editor-holder .CodeMirror,
 #editor-holder .CodeMirror-scroll {
     background-color: @background;
@@ -150,10 +157,11 @@
 }
 
 .cm-tag.cm-bracket {
-    color: @teal-600;
+    color: @green-500;
     text-shadow: @txt-shadown-c;
     /* <> & </> ***********************************/ 
 }
+
 
 /* highlight for the active line (View > Highlight Active Line) (linea de seleccion) */
 
@@ -199,8 +207,7 @@
             0 0 4px #000,
             0 0 7px #000,
             0 0 8px #000,
-            0 0 10px #000,
-            0 0 75px #000;;  }
+            0 0 75px #000;  }
 .cm-em { color: @yellow-500; }
 .cm-number {
     color: @grey-900;
@@ -209,13 +216,9 @@
             0 0 1px #F5F5F5,
             0 0 2px #F5F5F5,
             0 0 3px #F5F5F5,
-            0 0 4px #000,
-            0 0 7px #000,
-            0 0 8px #000,
-            0 0 10px #000,
-            0 0 75px #000;
+            0 0 8px #000000,
 }
-.cm-def, .cm-property { color: @deepOrange-500; }
+.cm-def, .cm-property { color: @red-A200; }
 .cm-variable, .cm-operator, .cm-meta, .cm-bracket { color: @grey-500; }
 .cm-variable-2 { color: @grey-600;}
 .cm-variable-3 { color: @grey-400;}
@@ -232,13 +235,16 @@
             0 0 10px #757575,
             0 0 75px #757575;
 }
-.cm-error, .cm-minus { color: @red-A400;}
+.cm-error, .cm-minus { color: @red-A400; text-decoration:line-through; }
+
 .cm-rangeinfo { color: @deepPurple-400;}
  .cm-keyword, .cm-qualifier, .cm-builtin, .cm-tag, .cm-quote {
-    color: @teal-600;
+    color: @green-300;
+     font-family: "Roboto Bold", monospace; font-size: 16px;
     text-shadow: @txt-shadown;
      
 }
+
     .cm-keyword { font-family: "Roboto Bold", sans-serif; font-size: 16px;}
 
 /*
@@ -253,13 +259,14 @@
     border-bottom: 1px solid @grey-500;
     border-radius: 50%; transition: .3s; position: relative;
     padding-left: 0.5rem; padding-top: 1.4rem; padding-bottom: 1.4rem; padding-right: 0.5rem; /* x4 palabras */
-    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.05), 0 4px 15px 0 rgba(255, 255, 255, 0.02);
     transition: margin 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
     &.searching-current-match {
         background-color: @red-500;
-        color: #fff;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        color: #000;
+        box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.16), 0 2px 10px 0 rgba(255, 255, 255, 0.12);
+        border-bottom: 1px solid @red-900;
         margin: 3px 0;
     }
 }
@@ -293,12 +300,12 @@
 
 /* Selección de texto 1 o más / off **/
 .CodeMirror .CodeMirror-selected {
-    background: @yellow-500;
+    background: @yellow-300;
 }
 
 /***** seleccion de texto / on **/
 .CodeMirror-focused .CodeMirror-selected{
-    background: @grey-300;
+    background: @grey-200;
     border-bottom-left-radius: 3px;
 }
 /**** selection ventanas propia ***/
@@ -320,7 +327,7 @@
     color: @grey-200!important; padding-left: 7px; padding-right: 7px;
     font-size: 20px;
     background: @red-A400; border-radius: 50%;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.07), 0 2px 10px 0 rgba(255, 255, 255, 0.03);
     
 }
 
@@ -367,7 +374,7 @@
     border: 1px solid @yellow-500; border-radius: 50%;
     background-color: @yellow-500;
     color: @black;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+    box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.14), 0 2px 10px 0 rgba(255, 255,255, 0.10); 
     transition: margin 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -553,7 +560,6 @@ Tabs
 /*.cm-m-xml: HTML, XML *********************************************************/
 .cm-m-xml.cm-attribute { font-family: "Roboto Regular",monospace; }
 .cm-m-xml.cm-string {  font-style: italic; }
-
  
 
 /*.cm-m-css: CSS *********************************************************/

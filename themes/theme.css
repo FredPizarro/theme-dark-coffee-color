@@ -482,12 +482,12 @@ Tabs
 /*.cm-m-css: CSS *********************************************************/
 /*.cm-m-javascript: JavaScript *********************************************************/
 .cm-m-javascript.cm-variable {
-  color: #1a237e;
+  color: #9fa8da;
   font-family: "Roboto Bold", sans-serif;
   opacity: 0.7;
 }
 .cm-m-javascript.cm-keyword {
-  color: #00897b;
+  color: #009688;
   font-family: "Roboto Black";
   font-size: 15px;
 }
@@ -495,10 +495,9 @@ Tabs
   color: #ff1744;
   font-family: "Roboto Bold", sans-serif;
   font-size: 16px;
-  opacity: 0.7;
 }
 .cm-m-javascript.cm-def {
-  color: #212121;
+  color: #eeeeee;
   font-family: "Roboto Light", sans-serif;
   border-bottom: 1px double #bdbdbd;
   text-shadow: 0 0 1px #000000,
@@ -514,7 +513,6 @@ Tabs
   color: #ff5722;
   font-family: "Roboto Black";
   font-style: italic;
-  opacity: 0.5;
 }
 /*.cm-m-clike: PHP *********************************************************************/
 .cm-meta,

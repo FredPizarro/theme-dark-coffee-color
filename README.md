@@ -2,7 +2,8 @@
 =======
 # README
 ## This is the README for your extension "theme-color-coffee"
-You can author your README using Brackets.io.
+* Suggestions are accepted for design theme Material Color (dark) in Contact more info ...
+* Versión Material Color (light) in  `https://github.com/FredPizarro/theme-light-coffee-color`
 
 ## Manual mode
 Clone a copy of the repo:

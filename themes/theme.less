@@ -48,6 +48,7 @@
 @teal-200: #80CBC4;
 @teal-500: #009688;
 @teal-600: #00897b;
+@teal-900: #004d40;
 @yellow-200: #FFF59D;
 @yellow-300: #FFF176;
 @yellow-500: #ffeb3b;
@@ -62,6 +63,7 @@
 @lightGreen-A400: #76ff03;
 @red-A200: #ff5252;
 @red-A400: #ff1744;
+@red-A700: #d50000;
 @teal-A200: #64ffda;
 @teal-A700: #00bfa5;
 @yellow-A100: #FFFF8D;
@@ -80,28 +82,28 @@
 
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto Thin";
   src: local(Roboto Thin), url("../fonts/roboto/Roboto-Thin.eot");
   src: url("../fonts/roboto/Roboto-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Thin.woff2") format("woff2"), url("../fonts/roboto/Roboto-Thin.woff") format("woff"), url("../fonts/roboto/Roboto-Thin.ttf") format("truetype");
   font-weight: 100;
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto Light";
   src: local(Roboto Light), url("../fonts/roboto/Roboto-Light.eot");
   src: url("../fonts/roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Light.woff2") format("woff2"), url("../fonts/roboto/Roboto-Light.woff") format("woff"), url("../fonts/roboto/Roboto-Light.ttf") format("truetype");
   font-weight: 300;
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto Regular";
   src: local(Roboto Regular), url("../fonts/roboto/Roboto-Regular.eot");
   src: url("../fonts/roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Regular.woff2") format("woff2"), url("../fonts/roboto/Roboto-Regular.woff") format("woff"), url("../fonts/roboto/Roboto-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto Medium";
   src: local(Robot Medium), url("../fonts/roboto/Roboto-Medium.eot");
   src: url("../fonts/roboto/Roboto-Medium.eot");
   src: url("../fonts/roboto/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Medium.woff2") format("woff2"), url("../fonts/roboto/Roboto-Medium.woff") format("woff"), url("../fonts/roboto/Roboto-Medium.ttf") format("truetype");
@@ -109,7 +111,7 @@
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto Bold";
   src: local(Roboto Bold), url("../fonts/roboto/Roboto-Bold.eot");
   src: url("../fonts/roboto/Roboto-Bold.eot");
   src: url("../fonts/roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Bold.woff2") format("woff2"), url("../fonts/roboto/Roboto-Bold.woff") format("woff"), url("../fonts/roboto/Roboto-Bold.ttf") format("truetype");
@@ -117,12 +119,14 @@
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto Black";
   src: local(Roboto Black), url("../fonts/roboto/Roboto-Black.eot");
   src: url("../fonts/roboto/Roboto-Black.eot");
   src: url("../fonts/roboto/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Black.woff") format("woff"), url("../fonts/roboto/Roboto-Black.ttf") format("truetype");
   font-weight: 900;
 }
+
+
 /*
 ********************************************
 */
@@ -168,8 +172,13 @@
 
 
 .CodeMirror-focused .CodeMirror-activeline-background {
-    background: @red-50;
-    border-left: 2px solid @red-A400;
+    background: @black;
+    border-bottom: 2px dashed @teal-900; opacity: 0.7;
+    margin-left: 3px;
+    padding-bottom: 1px;
+}
+.CodeMirror-focused .CodeMirror-activeline-background:active {
+    background: red;
 }
 
 .show-line-padding .CodeMirror-focused .CodeMirror-activeline-background {
@@ -179,9 +188,10 @@
 /* Seleccion linea (numeros) */
 .CodeMirror-focused .CodeMirror-activeline {
     .CodeMirror-gutter-elt {
-        background: @red-100;
-        color: @grey-700;
-        font-family: 'Roboto Black',sans-serif;
+        background: @grey-900;
+        color: @grey-400;
+        border-bottom: 2px solid @teal-900;
+        font-family: 'Roboto Black', sans-serif;
         font-size: 100%; 
         line-height: 1.4;
     }
@@ -190,7 +200,7 @@
     }
 }
 
- 
+
 /** atributos  *
 *(number: numeros, mediadas)
 *(def,property: css properties color: etc)
@@ -306,7 +316,7 @@
 
 /***** seleccion de texto / on **/
 .CodeMirror-focused .CodeMirror-selected{
-    background: @grey-800;
+    background: @red-50;
     border-bottom-left-radius: 3px;
 }
 /**** selection ventanas propia ***/
@@ -558,7 +568,7 @@ Tabs
 
 
 /*.cm-m-xml: HTML, XML *********************************************************/
-.cm-m-xml.cm-attribute { font-family: "Roboto Regular",monospace; }
+.cm-m-xml.cm-attribute { font-family: "Roboto Regular", monospace; }
 .cm-m-xml.cm-string {  font-style: italic; }
  
 
@@ -599,29 +609,24 @@ Tabs
 /*.cm-m-clike: PHP *********************************************************************/
 .cm-meta, .cm-m-clike.cm-meta { color: @grey-500; font-family: "Roboto Black", sans-serif; }
 .cm-m-clike.cm-keyword {
-    color: @indigo-400; font-family: "Roboto Black";
+    color: @teal-500; font-family: "Roboto Black";
     font-size: 15px; 
 }
 .cm-m-clike.cm-string{ 
-    color: @red-A400; font-family: "Roboto Bold",sans-serif;
+    color: @red-A400; font-family: "Roboto Medium";
     font-size: 16px;
-    opacity: 0.7;
 }
 .cm-m-clike.cm-comment { color: @grey-500; font-family: "Roboto Light", sans-serif; font-style: italic; }
-.cm-m-clike.cm-variable { color: @deepOrange-700;}
+.cm-m-clike.cm-variable { color: @deepOrange-500;}
 .cm-m-clike.cm-variable-2 { 
-    color: @grey-900; font-family: "Roboto Light", sans-serif;
+    color: @grey-600; font-family: "Roboto Light", sans-serif;
     border-bottom: 1px double  @foreground;
     text-shadow:
             0 0 1px #000000,
-            0 0 2px #000000,
-            0 0 3px #000000,
-            0 0 4px #000,
-            0 0 7px #000,
-            0 0 8px #000,
-            0 0 10px #000,
-            0 0 75px #000;
+            0 0 2px #000,
+            0 0 2px #000,
+            0 0 7px #000;
 }
-.cm-m-clike.cm-operator { color: @grey-900; font-size: 16px; }
+.cm-m-clike.cm-operator { color: @grey-400; font-size: 16px; }
 
 

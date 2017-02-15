@@ -3,8 +3,9 @@
 # README
 ## This is the README for your extension "theme-color-coffee"
 * Suggestions are accepted for design theme Material Color (dark) in Contact more info ...
-* Versión Material Color (light) in  `https://github.com/FredPizarro/theme-light-coffee-color`
-
+* Version Mode light: Material Color (light) in  https://github.com/FredPizarro/theme-light-coffee-color
+* Versions and Comment in http://brackets.dnbard.com/extension/theme-dark-coffee-color
+ 
 ## Manual mode
 Clone a copy of the repo:
 

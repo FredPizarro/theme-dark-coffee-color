@@ -10,6 +10,8 @@
 /* Color Material */
 @blue-800: #1565C0;
 @blueGrey-900: #263238;
+@brown-400: #8D6E63; 
+@brown-500: #795548; 
 @deepOrange-50: #fbe9e7;
 @deepOrange-200: #ffab91;
 @deepOrange-300: #ff8a65;
@@ -49,9 +51,12 @@
 @teal-500: #009688;
 @teal-600: #00897b;
 @teal-900: #004d40;
+@yellow-50: #FFFDE7;
 @yellow-200: #FFF59D;
 @yellow-300: #FFF176;
 @yellow-500: #ffeb3b;
+@yellow-800: #F9A825;
+@yellow-900: #F57F17;
 
 /* ACCENTS */
 @blue-A400: #2979ff;
@@ -127,9 +132,6 @@
 }
 
 
-/*
-********************************************
-*/
 
 // STYLING
 /* Editor area **/
@@ -221,18 +223,18 @@
             0 0 75px #000;  }
 .cm-em { color: @yellow-500; }
 .cm-number {
-    color: @grey-900;
-    font-family: 'Roboto Bold', sans-serif;
+    color: @white; opacity: 0.6;
+    font-family: 'Roboto Thin', sans-serif;
     text-shadow:
-            0 0 1px #F5F5F5,
-            0 0 2px #F5F5F5,
-            0 0 3px #F5F5F5,
-            0 0 8px #000000,
+            0 0 1px #000,
+            0 0 2px #000,
+            0 0 3px #000,
+            0 0 8px #F5F5F5,
 }
 .cm-def, .cm-property { color: @red-A200; }
 .cm-variable, .cm-operator, .cm-meta, .cm-bracket { color: @grey-500; }
 .cm-variable-2 { color: @grey-600;}
-.cm-variable-3 { color: @grey-400;}
+.cm-variable-3 { color: @green-300; font-family: "Roboto Thin", monospace; font-size: 17px; }
 .cm-comment { color: @grey-500; font-family: "Roboto Light", sans-serif; font-style: italic; }
 .cm-header { color: @purple-300;}
 .cm-link { color: @deepOrange-500; text-decoration: none; font-family: "Roboto Black", sans-serif;
@@ -246,7 +248,9 @@
             0 0 10px #757575,
             0 0 75px #757575;
 }
-.cm-error, .cm-minus { color: @red-A400; text-decoration:line-through; }
+.cm-error, .cm-minus {
+    color: @red-A400 !important; text-decoration:line-through;
+}
 
 .cm-rangeinfo { color: @deepPurple-400;}
  .cm-keyword, .cm-qualifier, .cm-builtin, .cm-tag, .cm-quote {
@@ -254,7 +258,7 @@
      font-family: "Roboto Bold", monospace; font-size: 16px;
     text-shadow: @txt-shadown;
      
-}
+ }
 
     .cm-keyword { font-family: "Roboto Bold", sans-serif; font-size: 16px;}
 
@@ -265,6 +269,8 @@
 *CodeMirror-cursor: barra number
 *CodeMirror-linenumber: numeración de cada linea (Gutter line number)
 */
+
+
 .CodeMirror-searching {
     font-size: 1.1rem; background: @grey-200;
     border-bottom: 1px solid @grey-500;
@@ -316,8 +322,9 @@
 
 /***** seleccion de texto / on **/
 .CodeMirror-focused .CodeMirror-selected{
-    background: @red-50;
+    background: @white;
     border-bottom-left-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.07), 0 2px 10px 0 rgba(255, 255, 255, 0.03);
 }
 /**** selection ventanas propia ***/
 .CodeMirror-linebackground {
@@ -325,20 +332,35 @@
 }
 
 
+@keyframes caffee-bean {
+    0%{
+        background-color: @green-300;
+    }
+    50%{
+        background-color: @yellow-A700;
+    }
+    60%{
+        background-color: @red-A400;
+    }
+    100%{
+        background-color: @brown-500;
+    }
+}
+
 /*****  seleccion de corchetes (tags) ***************************************/
 .CodeMirror-matchingbracket,
 .CodeMirror-matchingtag {
     background-color: transparent;
-    border-bottom: 2px solid @red-A400;
     color: @green-500;
 }
 /***** corchetes en seleccion ***************************************/
 .CodeMirror-matchingbracket {
-    color: @grey-200!important; padding-left: 7px; padding-right: 7px;
+    color: @grey-200!important; padding-left: 7px; padding-right: 8px;
+    padding-bottom: 3px;
     font-size: 20px;
-    background: @red-A400; border-radius: 50%;
+    background: @green-500; border-radius: 50%;
     box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.07), 0 2px 10px 0 rgba(255, 255, 255, 0.03);
-    
+    -webkit-animation: caffee-bean 7s alternate ease-in-out infinite;
 }
 
 
@@ -400,7 +422,7 @@
     display: inline-block;
     border-color: @foreground;
     color: @grey-500!important;
-    background-color: @red-50;
+    background-color: @yellow-50;
     padding: 0 5px;
 }
 
@@ -560,8 +582,15 @@ Tabs
     text-align: center;
 }
 
-
-
+/* Show Whitespace (Git add)*/
+.CodeMirror .cm-dk-whitespace-space::before,
+.CodeMirror .cm-dk-whitespace-tab::before,
+.CodeMirror .cm-dk-whitespace-leading-space::before,
+.CodeMirror .cm-dk-whitespace-leading-tab::before,
+.CodeMirror .cm-dk-whitespace-trailing-space::before,
+.CodeMirror .cm-dk-whitespace-trailing-tab::before {
+    background-color: @grey-900 !important;
+}
 
 
 
@@ -570,23 +599,47 @@ Tabs
 /*.cm-m-xml: HTML, XML *********************************************************/
 .cm-m-xml.cm-attribute { font-family: "Roboto Regular", monospace; }
 .cm-m-xml.cm-string {  font-style: italic; }
- 
+.cm-m-xml.cm-error {
+	border: 2px solid @red-A400;
+}
+.cm-m-xml.CodeMirror-matchingtag {
+    border-bottom: 2px solid @red-A400;
+}
 
 /*.cm-m-css: CSS *********************************************************/
 
 
 /*.cm-m-javascript: JavaScript *********************************************************/
-.cm-m-javascript.cm-variable {
-    color: @indigo-200; font-family: "Roboto Bold",sans-serif;
-    opacity: 0.7;
-}
-.cm-m-javascript.cm-keyword{
-    color: @teal-500; font-family: "Roboto Black";
-    font-size: 15px;
+.cm-m-javascript.cm-atom{
+     font-family: "Roboto Thin", monospace; font-size: 16px;
 }
 .cm-m-javascript.cm-string {
     color: @red-A400; font-family: "Roboto Bold",sans-serif;
     font-size: 16px;
+}
+.cm-m-javascript.cm-operator {
+    font-size: 16px;
+    text-shadow:
+            0 0 1px #ffffff,
+            0 0 2px #000000,
+            0 0 3px #000000,
+            0 0 4px #000,
+            0 0 7px #000,
+            0 0 8px #000,
+            0 0 10px #000,
+            0 0 75px #fff;
+}
+.cm-m-javascript.cm-variable {
+    color: @yellow-300; font-family: "Roboto Bold", sans-serif;
+    opacity: 0.8;
+}
+.cm-m-javascript.cm-variable-2 {
+    color: @grey-200; font-family: "Roboto Bold", sans-serif;
+    opacity: 0.8;
+}
+.cm-m-javascript.cm-keyword{
+    color: @teal-500; font-family: "Roboto Thin", monospace;
+    font-size: 15px;
 }
 .cm-m-javascript.cm-def {
 	color: @grey-200; font-family: "Roboto Light", sans-serif;
@@ -606,26 +659,44 @@ Tabs
 }
 
 
+
+
 /*.cm-m-clike: PHP *********************************************************************/
-.cm-meta, .cm-m-clike.cm-meta { color: @grey-500; font-family: "Roboto Black", sans-serif; }
-.cm-m-clike.cm-keyword {
-    color: @teal-500; font-family: "Roboto Black";
-    font-size: 15px; 
-}
-.cm-m-clike.cm-string{ 
-    color: @red-A400; font-family: "Roboto Medium";
-    font-size: 16px;
-}
-.cm-m-clike.cm-comment { color: @grey-500; font-family: "Roboto Light", sans-serif; font-style: italic; }
-.cm-m-clike.cm-variable { color: @deepOrange-500;}
-.cm-m-clike.cm-variable-2 { 
-    color: @grey-600; font-family: "Roboto Light", sans-serif;
+.cm-m-clike.cm-atom, .cm-m-clike.cm-number {
+  color: @green-300; }
+.cm-m-clike.cm-builtin {
+  color: @deepOrange-300; }
+.cm-m-clike.cm-def {
+  color: @grey-200; font-family: "Roboto Light", sans-serif;
     border-bottom: 1px double  @foreground;
     text-shadow:
             0 0 1px #000000,
-            0 0 2px #000,
-            0 0 2px #000,
-            0 0 7px #000;
+            0 0 2px #000000,
+            0 0 3px #000000,
+            0 0 4px #000,
+            0 0 7px #000,
+            0 0 8px #000,
+            0 0 10px #000,
+            0 0 75px #000;
+}
+
+.cm-meta, .cm-m-clike.cm-meta {
+    color: @green-300;
+     font-family: "Roboto Bold", monospace; font-size: 16px;
+    text-shadow: @txt-shadown;
+}
+.cm-m-clike.cm-keyword {
+    color: @teal-500; font-family: "Roboto Black", monospace;
+    font-size: 15px; 
+}
+.cm-m-clike.cm-string{ 
+    color: @red-A400; font-family: "Roboto Medium", sans-serif;
+    font-size: 16px;
+}
+.cm-m-clike.cm-comment { color: @grey-500; font-family: "Roboto Light", sans-serif; font-style: italic; }
+.cm-m-clike.cm-variable { color: @grey-300; }
+.cm-m-clike.cm-variable-2 { 
+     color: @grey-300;text-shadow: @txt-shadown; font-size: 15px;
 }
 .cm-m-clike.cm-operator { color: @grey-400; font-size: 16px; }
 

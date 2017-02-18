@@ -45,9 +45,6 @@
   src: url("../fonts/roboto/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Black.woff") format("woff"), url("../fonts/roboto/Roboto-Black.ttf") format("truetype");
   font-weight: 900;
 }
-/*
-********************************************
-*/
 /* Editor area **/
 .CodeMirror,
 .CodeMirror-scroll {
@@ -146,9 +143,10 @@
   color: #ffeb3b;
 }
 .cm-number {
-  color: #212121;
-  font-family: 'Roboto Bold', sans-serif;
-  text-shadow: 0 0 1px #f5f5f5, 0 0 2px #f5f5f5, 0 0 3px #f5f5f5, 0 0 8px #000000;
+  color: #ffffff;
+  opacity: 0.6;
+  font-family: 'Roboto Thin', sans-serif;
+  text-shadow: 0 0 1px #000000, 0 0 2px #000000, 0 0 3px #000000, 0 0 8px #f5f5f5;
 }
 .cm-def,
 .cm-property {
@@ -164,7 +162,9 @@
   color: #757575;
 }
 .cm-variable-3 {
-  color: #bdbdbd;
+  color: #81c784;
+  font-family: "Roboto Thin", monospace;
+  font-size: 17px;
 }
 .cm-comment {
   color: #9e9e9e;
@@ -189,7 +189,7 @@
 }
 .cm-error,
 .cm-minus {
-  color: #ff1744;
+  color: #ff1744 !important;
   text-decoration: line-through;
 }
 .cm-rangeinfo {
@@ -268,29 +268,45 @@
 }
 /***** seleccion de texto / on **/
 .CodeMirror-focused .CodeMirror-selected {
-  background: #ffebee;
+  background: #ffffff;
   border-bottom-left-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.07), 0 2px 10px 0 rgba(255, 255, 255, 0.03);
 }
 /**** selection ventanas propia ***/
 .CodeMirror-linebackground {
   background: #ff1744;
 }
+@keyframes caffee-bean {
+  0% {
+    background-color: #81c784;
+  }
+  50% {
+    background-color: #ffd600;
+  }
+  60% {
+    background-color: #ff1744;
+  }
+  100% {
+    background-color: #795548;
+  }
+}
 /*****  seleccion de corchetes (tags) ***************************************/
 .CodeMirror-matchingbracket,
 .CodeMirror-matchingtag {
   background-color: transparent;
-  border-bottom: 2px solid #ff1744;
   color: #4caf50;
 }
 /***** corchetes en seleccion ***************************************/
 .CodeMirror-matchingbracket {
   color: #eeeeee !important;
   padding-left: 7px;
-  padding-right: 7px;
+  padding-right: 8px;
+  padding-bottom: 3px;
   font-size: 20px;
-  background: #ff1744;
+  background: #4caf50;
   border-radius: 50%;
   box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.07), 0 2px 10px 0 rgba(255, 255, 255, 0.03);
+  -webkit-animation: caffee-bean 7s alternate ease-in-out infinite;
 }
 .CodeMirror-overwrite .CodeMirror-cursor {
   border-left: none !important;
@@ -339,7 +355,7 @@
   display: inline-block;
   border-color: #bdbdbd;
   color: #9e9e9e !important;
-  background-color: #ffebee;
+  background-color: #fffde7;
   padding: 0 5px;
 }
 /* NON-EDITOR STYLING */
@@ -479,6 +495,15 @@ Tabs
   width: 200px;
   text-align: center;
 }
+/* Show Whitespace (Git add)*/
+.CodeMirror .cm-dk-whitespace-space::before,
+.CodeMirror .cm-dk-whitespace-tab::before,
+.CodeMirror .cm-dk-whitespace-leading-space::before,
+.CodeMirror .cm-dk-whitespace-leading-tab::before,
+.CodeMirror .cm-dk-whitespace-trailing-space::before,
+.CodeMirror .cm-dk-whitespace-trailing-tab::before {
+  background-color: #212121 !important;
+}
 /*.cm-m-xml: HTML, XML *********************************************************/
 .cm-m-xml.cm-attribute {
   font-family: "Roboto Regular", monospace;
@@ -486,22 +511,48 @@ Tabs
 .cm-m-xml.cm-string {
   font-style: italic;
 }
+.cm-m-xml.cm-error {
+  border: 2px solid #ff1744;
+}
+.cm-m-xml.CodeMirror-matchingtag {
+  border-bottom: 2px solid #ff1744;
+}
 /*.cm-m-css: CSS *********************************************************/
 /*.cm-m-javascript: JavaScript *********************************************************/
-.cm-m-javascript.cm-variable {
-  color: #9fa8da;
-  font-family: "Roboto Bold", sans-serif;
-  opacity: 0.7;
-}
-.cm-m-javascript.cm-keyword {
-  color: #009688;
-  font-family: "Roboto Black";
-  font-size: 15px;
+.cm-m-javascript.cm-atom {
+  font-family: "Roboto Thin", monospace;
+  font-size: 16px;
 }
 .cm-m-javascript.cm-string {
   color: #ff1744;
   font-family: "Roboto Bold", sans-serif;
   font-size: 16px;
+}
+.cm-m-javascript.cm-operator {
+  font-size: 16px;
+  text-shadow: 0 0 1px #ffffff,
+            0 0 2px #000000,
+            0 0 3px #000000,
+            0 0 4px #000,
+            0 0 7px #000,
+            0 0 8px #000,
+            0 0 10px #000,
+            0 0 75px #fff;
+}
+.cm-m-javascript.cm-variable {
+  color: #fff176;
+  font-family: "Roboto Bold", sans-serif;
+  opacity: 0.8;
+}
+.cm-m-javascript.cm-variable-2 {
+  color: #eeeeee;
+  font-family: "Roboto Bold", sans-serif;
+  opacity: 0.8;
+}
+.cm-m-javascript.cm-keyword {
+  color: #009688;
+  font-family: "Roboto Thin", monospace;
+  font-size: 15px;
 }
 .cm-m-javascript.cm-def {
   color: #eeeeee;
@@ -522,31 +573,15 @@ Tabs
   font-style: italic;
 }
 /*.cm-m-clike: PHP *********************************************************************/
-.cm-meta,
-.cm-m-clike.cm-meta {
-  color: #9e9e9e;
-  font-family: "Roboto Black", sans-serif;
+.cm-m-clike.cm-atom,
+.cm-m-clike.cm-number {
+  color: #81c784;
 }
-.cm-m-clike.cm-keyword {
-  color: #5c6bc0;
-  font-family: "Roboto Black";
-  font-size: 15px;
+.cm-m-clike.cm-builtin {
+  color: #ff8a65;
 }
-.cm-m-clike.cm-string {
-  color: #ff1744;
-  font-family: "Roboto Medium";
-  font-size: 16px;
-}
-.cm-m-clike.cm-comment {
-  color: #9e9e9e;
-  font-family: "Roboto Light", sans-serif;
-  font-style: italic;
-}
-.cm-m-clike.cm-variable {
-  color: #ff5722;
-}
-.cm-m-clike.cm-variable-2 {
-  color: #757575;
+.cm-m-clike.cm-def {
+  color: #eeeeee;
   font-family: "Roboto Light", sans-serif;
   border-bottom: 1px double #bdbdbd;
   text-shadow: 0 0 1px #000000,
@@ -558,7 +593,37 @@ Tabs
             0 0 10px #000,
             0 0 75px #000;
 }
+.cm-meta,
+.cm-m-clike.cm-meta {
+  color: #81c784;
+  font-family: "Roboto Bold", monospace;
+  font-size: 16px;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+.cm-m-clike.cm-keyword {
+  color: #009688;
+  font-family: "Roboto Black", monospace;
+  font-size: 15px;
+}
+.cm-m-clike.cm-string {
+  color: #ff1744;
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 16px;
+}
+.cm-m-clike.cm-comment {
+  color: #9e9e9e;
+  font-family: "Roboto Light", sans-serif;
+  font-style: italic;
+}
+.cm-m-clike.cm-variable {
+  color: #e0e0e0;
+}
+.cm-m-clike.cm-variable-2 {
+  color: #e0e0e0;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+}
 .cm-m-clike.cm-operator {
-  color: #212121;
+  color: #bdbdbd;
   font-size: 16px;
 }

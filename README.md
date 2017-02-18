@@ -26,11 +26,11 @@ As this location is under your user directory, the content is persisted across C
 # Images
 
 #### view in html
-![HTML](screenshots/theme-coffee-01.png)
+![HTML](screenshots/theme-coffee-html.png)
 #### view in CSS
-![HTML](screenshots/theme-coffee-02.png)
+![HTML](screenshots/theme-coffee-css.png)
 #### view in javascript
-![HTML](screenshots/theme-coffee-03.png)
+![HTML](screenshots/theme-coffee-js.png)
 
 
 =======
@@ -52,7 +52,7 @@ Require Install "Minimap"
 ```
 git clone https://github.com/zorgzerg/brackets-minimap.git
 ```
-![HTML](screenshots/brackets-minimap.png)
+![HTML](screenshots/backets-minimap.png)
 
 Repository : ( `https://github.com/websiteduck/brackets-wdminimap` )
 Repository : ( `https://github.com/zorgzerg` )
